@@ -1,0 +1,486 @@
+:root {
+    --primary-indigo: #3f51b5;
+    --accent-pink: #ff4081;
+    --success-green: #4caf50;
+    --warning-orange: #ff9800;
+    --error-red: #f44336;
+    --surface-color: #ffffff;
+    --background-color: #fafafa;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --border-radius: 12px;
+    --shadow-1: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-2: 0 4px 16px rgba(0,0,0,0.12);
+    --shadow-3: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* 暗色主题 */
+.mdui-theme-layout-dark {
+    --surface-color: #121212;
+    --background-color: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255,255,255,0.7);
+}
+
+/* 主要内容布局 */
+.download-center {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.logo-container {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.app-main-icon {
+    font-size: 64px;
+    background: linear-gradient(135deg, #3f51b5, #ff4081);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+}
+
+.mdui-typo-display-1 {
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: inherit;
+}
+
+.mdui-text-color-secondary {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* 版本选择卡片 */
+.version-card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.version-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+}
+
+.version-selector {
+    text-align: center;
+    padding: 32px;
+}
+
+.current-version {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.version-number {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.version-date {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.version-changelog {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 100%;
+    margin: 0 auto;
+    word-break: break-word;
+    white-space: pre-wrap; /* 保留空白序列，但允许换行 */
+    overflow-wrap: break-word; /* 长单词或URL地址换行 */
+    max-width: none; /* 移除最大宽度限制 */
+}
+
+/* 历史版本 */
+.mdui-collapse {
+    margin-bottom: 24px;
+}
+
+.mdui-collapse-item {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-1);
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.mdui-collapse-item:hover {
+    box-shadow: var(--shadow-2);
+}
+
+.mdui-list-item-content {
+    font-weight: 500;
+}
+
+.mdui-list-item {
+    border-radius: var(--border-radius);
+}
+
+/* 对话框样式 */
+.mdui-dialog {
+    border-radius: var(--border-radius);
+}
+
+.mdui-dialog-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.cloud-options {
+    margin: 16px 0;
+}
+
+.mdui-radio {
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* 下载状态 */
+.download-status {
+    margin-top: 24px;
+}
+
+#active-tasks {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+}
+
+/* 进度对话框 */
+.mdui-dialog-content .mdui-progress {
+    margin: 16px 0;
+    height: 8px !important;
+    border-radius: 8px;
+}
+
+.mdui-progress-determinate {
+    background: linear-gradient(90deg, #3f51b5, #ff4081);
+    border-radius: 8px;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+.mdui-theme-layout-dark .loading-overlay {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* 按钮样式 */
+.mdui-btn-raised {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.mdui-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-2);
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.version-card,
+.mdui-collapse-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.mdui-dialog {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* 平滑过渡效果 */
+.mdui-dialog-opening {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.mdui-dialog-open {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+}
+
+/* 输入框样式 */
+.mdui-textfield {
+    margin-bottom: 12px;
+}
+
+/* 标签样式 */
+.cloud-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 8px;
+    vertical-align: middle;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+/* 标签颜色变体 */
+.tag-blue {
+    background-color: rgba(33, 150, 243, 0.2);
+    color: #1976d2;
+}
+
+.tag-green {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #388e3c;
+}
+
+.tag-orange {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #f57c00;
+}
+
+.tag-red {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #d32f2f;
+}
+
+.tag-purple {
+    background-color: rgba(156, 39, 176, 0.2);
+    color: #7b1fa2;
+}
+
+/* 页面加载过渡动画 */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #fafafa, #f5f5f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    color: var(--text-primary);
+}
+
+/* 暗色主题下的加载动画背景 */
+.mdui-theme-layout-dark .loading-screen {
+    background: linear-gradient(135deg, #1a1a1a, #121212);
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 加载动画覆盖层 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.mdui-textfield-input {
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.mdui-theme-layout-dark .mdui-textfield-input {
+    background: var(--surface-color);
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* 通知样式 */
+.mdui-snackbar {
+    border-radius: var(--border-radius);
+    margin: 16px;
+    max-width: 90vw;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-primary);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 600px) {
+    .download-center {
+        margin: 40px 16px;
+        padding: 12px;
+    }
+    
+    .app-main-icon {
+        font-size: 48px;
+    }
+    
+    .version-number {
+        font-size: 20px;
+    }
+    
+    .version-selector {
+        padding: 24px 16px;
+    }
+    
+    .mdui-typo-display-1 {
+        font-size: 28px !important;
+    }
+    
+    .version-changelog {
+        font-size: 13px;
+        padding: 8px;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+    
+    .mdui-list-item-text {
+        font-size: 12px;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .download-center {
+        margin: 24px 8px;
+    }
+    
+    .hero-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* 页面底部样式 */
+footer {
+    margin-top: 48px;
+    padding: 16px 0;
+    font-size: 14px;
+    color: #333333;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* 暗色主题下的页脚样式 */
+.mdui-theme-layout-dark footer {
+    background-color: #303030 !important;
+    color: var(--text-secondary) !important;
+    border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 确保页脚背景色不被MDUI类覆盖 */
+footer {
+    background-color: #ffffff !important;
+}
+
+/* 暗色主题下的页脚文字颜色 */
+.mdui-theme-layout-dark footer p {
+    color: inherit !important;
+}
+
+/* 底部加载动画暗色模式样式 */
+.mdui-theme-layout-dark #footer-loading {
+    background: rgba(0, 0, 0, 0.85) !important;
+    border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.mdui-theme-layout-dark #footer-loading > div:last-child {
+    color: #e0e0e0 !important;
+}

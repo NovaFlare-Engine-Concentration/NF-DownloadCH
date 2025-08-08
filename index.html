@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NF引擎下载站 - 极速下载引擎</title>
+    <!-- MDUI from jsDelivr CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" sizes="16x16">
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
+    <!-- 顶部导航栏 -->
+    <header class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-indigo">
+            <span class="mdui-typo-title">NF下载站</span>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:void(0)" class="mdui-btn mdui-btn-icon" id="theme-toggle">
+                <i class="mdui-icon material-icons">brightness_6</i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="mdui-container">
+        <!-- 中心下载区域 -->
+        <div class="download-center">
+            <div class="hero-section">
+                <div class="mdui-text-center">
+                    <div class="logo-container">
+                        <i class="mdui-icon material-icons app-main-icon">rocket_launch</i>
+                    </div>
+                    <h1 class="mdui-typo-display-1 mdui-text-color-theme">
+                        <img src="logo.png" alt="NF引擎Logo" style="height: 36px; vertical-align: middle; margin-right: 8px;">
+                        NF引擎下载
+                    </h1>
+                    <p class="mdui-text-color-secondary mdui-m-t-1">下载站版本源</p>
+                </div>
+            </div>
+
+            <!-- 版本选择卡片 -->
+            <div class="mdui-card mdui-shadow-3 version-card">
+                <div class="mdui-card-content">
+                    <div class="version-selector">
+                        <div class="current-version" id="main-version-content">
+                            <div class="version-number">v...</div>
+                        </div>
+                        <div class="mdui-m-t-2">
+                            <button class="mdui-btn mdui-btn-raised mdui-color-indigo mdui-ripple" onclick="window.showCloudVersions && showCloudVersions(state.latestVersion)" id="main-download-btn">
+                                <i class="mdui-icon material-icons">cloud_download</i>
+                                下载
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <!-- 网盘选择弹窗 -->
+    <div class="mdui-dialog" id="cloud-dialog">
+        <div class="mdui-dialog-title">
+            <i class="mdui-icon material-icons">cloud</i>
+            选择下载方式
+        </div>
+        <div class="mdui-dialog-content">
+            <div class="mdui-m-b-2">
+                <strong id="cloud-version">NF引擎 v...</strong>
+            </div>
+            
+            <div class="cloud-options">
+                <!-- 网盘选项将动态加载 -->
+            </div>
+            
+
+        </div>
+        <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>取消</button>
+            <button class="mdui-btn mdui-color-theme-accent mdui-ripple" onclick="startDownload()">去下载</button>
+        </div>
+    </div>
+
+
+    <!-- 加载过渡动画 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="logo-container mdui-center">
+                <i class="mdui-icon material-icons app-main-icon">cloud_download</i>
+            </div>
+            <div class="mdui-center mdui-typo-title">NF下载站</div>
+            <div class="mdui-center mdui-spinner mdui-spinner-colorful mdui-spinner-active" style="width: 64px; height: 64px; margin-top: 24px;"></div>
+        </div>
+    </div>
+
+    <!-- MDUI JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    
+    <!-- NF下载站 核心模块 -->
+    <script src="api/api.js"></script>
+    <script src="utils/utils.js"></script>
+    <script src="components/ui.js"></script>
+    <script src="scripts.js"></script>
+    
+    <!-- 页面底部 -->
+    <footer class="mdui-footer mdui-typo-opacity mdui-m-t-2">
+        <div class="mdui-container">
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-text-center mdui-text-left">
+                    <p class="mdui-m-y-0" id="copyright-text">© 2024-2025 NF下载站 版权所有</p>
+                </div>
+                <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-text-center mdui-text-right">
+                    <p class="mdui-m-y-0" id="powered-by-text">Powered by NovaFlare-Engine</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 底部加载动画 -->
+    <div id="footer-loading" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); padding: 16px 0; text-align: center; z-index: 1000; border-top: 1px solid rgba(0,0,0,0.1);">
+        <div class="mdui-spinner mdui-spinner-colorful mdui-spinner-active" style="width: 32px; height: 32px; margin: 0 auto;"></div>
+        <div style="margin-top: 8px; color: #333;">加载中...</div>
+    </div>
+</body>
+</html>

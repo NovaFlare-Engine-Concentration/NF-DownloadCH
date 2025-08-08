@@ -1,0 +1,21 @@
+{
+  "cloud_storage_example": {
+    "如何修改云盘链接": "只需修改 CONFIG.FALLBACK_VERSIONS 中的字符串",
+    "小飞机网盘": "https://pan.baidu.com/s/你的分享码",
+    "蓝奏云": "https://xxx.lanzouw.com/xxxx",
+    "123云盘": "https://www.123pan.com/xxxx",
+    "阿里云盘": "https://www.aliyundrive.com/s/xxxx"
+  },
+  "建议的API响应格式": {
+    "endpoint": "/api/versions",
+    "method": "GET",
+    "response": {
+      "versions": {
+        "1.1.10": [
+          {"name": "小飞机", "link": "https://xxx", "code": "abc123"},
+          {"name": "蓝奏云", "link": "https://xxx"}
+        ]
+      }
+    }
+  }
+}
