@@ -16,7 +16,23 @@ const CONFIG = {
      * 版本数据集合 - 包含所有NovaFlare-Engine版本信息
      * @type {object}
      */
-    VERSIONS: {}
+    VERSIONS: {
+        '版本号': {
+            date: '发布日期',
+            changelog: '更新日志',
+            downloads: [
+                {
+                    name: '下载平台名称',
+                    link: '下载链接',
+                    code: '提取码',
+                    tags: [
+                        { class: '标签类名', text: '标签文本' }
+                    ]
+                }
+                // 更多下载链接...
+            ]
+        }
+    }
 };
 
 // 处理changelog换行
@@ -299,4 +315,5 @@ setTimeout(() => {
         state.versions = CONFIG.VERSIONS;
         renderVersions();
     }
+
 }, 50);
