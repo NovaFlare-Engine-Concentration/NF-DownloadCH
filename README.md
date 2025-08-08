@@ -1,6 +1,6 @@
 # NF下载站 - 现代化MDUI应用下载平台
 
-一个基于Material Design风格的现代化应用下载站，参考了mcapkps.com的设计美学。
+一个基于Material Design风格的现代化应用下载站，参考了[mcapkps.com](mcapkps.com)的设计。
 
 ## 🎯 特性
 
@@ -238,4 +238,5 @@ MIT License - 可以自由使用和修改
 欢迎提交Issues和改进建议！
 
 - 📧 联系邮箱：contact@nfdownload.com
+
 - 💬 技术支持：QQ群 12345678
