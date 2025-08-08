@@ -2,7 +2,7 @@
 
 一个基于Material Design风格的现代化应用下载站，参考了[mcapkps.com](mcapkps.com)的设计。
 
-## [主站](xz.novaflare.top)
+## [主站](http://xz.novaflare.top)
 
 ## 🎯 特性
 
@@ -242,4 +242,5 @@ MIT License - 可以自由使用和修改
 - 📧 联系邮箱：contact@nfdownload.com
 
 - 💬 技术支持：QQ群 12345678
+
 
